@@ -6,9 +6,6 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="auth" />
-        <module name="user" />
-        <module name="location" />
       </profile>
     </annotationProcessing>
   </component>
@@ -16,6 +13,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="auth" options="-parameters" />
       <module name="location" options="-parameters" />
+      <module name="scheduler" options="-parameters" />
       <module name="user" options="-parameters" />
     </option>
   </component>
