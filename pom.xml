@@ -26,6 +26,7 @@
         <module>user</module>
         <module>location</module>
         <module>scheduler</module>
+        <module>notification</module>
     </modules>
 
     <dependencies>
