@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="scheduler" />
+        <module name="notification" />
         <module name="location" />
         <module name="auth" />
         <module name="user" />
@@ -17,6 +18,8 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="auth" options="-parameters" />
       <module name="location" options="-parameters" />
+      <module name="notification" options="-parameters" />
+      <module name="scheduler" options="-parameters" />
       <module name="user" options="-parameters" />
     </option>
   </component>
