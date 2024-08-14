@@ -22,11 +22,11 @@
     </properties>
 
     <modules>
-        <module>auth</module>
-        <module>user</module>
-        <module>location</module>
-        <module>scheduler</module>
-        <module>notification</module>
+        <module>auth-service</module>
+        <module>user-management-service</module>
+        <module>location-service</module>
+        <module>scheduler-service</module>
+        <module>notification-service</module>
     </modules>
 
     <dependencies>

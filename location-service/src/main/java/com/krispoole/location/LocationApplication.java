@@ -4,8 +4,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Location {
+public class LocationApplication {
     public static void main(String[] args) {
-        SpringApplication.run(Location.class, args);
+        SpringApplication.run(LocationApplication.class, args);
     }
 }
