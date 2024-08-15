@@ -12,6 +12,7 @@ import java.util.List;
 @Entity
 @Table(name = "locations")
 public class Location {
+
     @Id
     private Long id;
     private String name;
