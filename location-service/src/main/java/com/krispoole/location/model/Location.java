@@ -1,89 +1,59 @@
 package com.krispoole.location.model;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
+import java.time.LocalDateTime;
+import java.util.List;
+
+@Getter
+@Setter
 @Entity
-@Table(name = "Locations")
+@Table(name = "locations")
 public class Location {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
-    private int locationId;
-
     private String name;
-
+    private String shortName;
+    private String locationType;
+    private String locationCode;
+    private String address;
+    private String addressAdditional;
     private String city;
-
     private String state;
-
     private String postalCode;
-
     private String countryCode;
-
     private String tzData;
+    private String phoneNumber;
+    private String phoneAreaCode;
+    private String phoneCountryCode;
+    private String phoneExtension;
+    private String phoneAltNumber;
+    private String phoneAltAreaCode;
+    private String phoneAltCountryCode;
+    private String phoneAltExtension;
+    private String faxNumber;
+    private String faxAreaCode;
+    private String faxCountryCode;
+    private String faxExtension;
+    private LocalDateTime effectiveDate;
+    private Boolean temporary;
+    private Boolean inviteOnly;
+    private Boolean operational;
+    @Column(columnDefinition = "TEXT")
+    private String directions;
+    @Column(columnDefinition = "TEXT")
+    private String notes;
+    private String mapFileName;
+    private Boolean remoteInd;
 
-    public Long getId() {
-        return id;
-    }
+    @ManyToMany(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+    @JoinTable(
+            name = "location_services",
+            joinColumns = @JoinColumn(name = "location_id"),
+            inverseJoinColumns = @JoinColumn(name = "service_id")
+    )
+    private List<ServiceType> serviceTypes;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public int getLocationId() {
-        return locationId;
-    }
-
-    public void setLocationId(int locationId) {
-        this.locationId = locationId;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getState() {
-        return state;
-    }
-
-    public void setState(String state) {
-        this.state = state;
-    }
-
-    public String getPostalCode() {
-        return postalCode;
-    }
-
-    public void setPostalCode(String postalCode) {
-        this.postalCode = postalCode;
-    }
-
-    public String getCountryCode() {
-        return countryCode;
-    }
-
-    public void setCountryCode(String countryCode) {
-        this.countryCode = countryCode;
-    }
-
-    public String getTzData() {
-        return tzData;
-    }
-
-    public void setTzData(String tzData) {
-        this.tzData = tzData;
-    }
 }
